@@ -15,9 +15,10 @@ class UsersController < ApplicationController
         if @user.valid?
            @user.save
            session["user_id"] = @user.id
+
            redirect_to '/show'
         else
-           # redirect_to '/login'
+            redirect_to '/login'
         end
     end
 
@@ -35,10 +36,9 @@ class UsersController < ApplicationController
     end
 
     def logout  #signing a user out
-        if logged_in?
-          session.clear
-          redirect_to "/home"
-        end
+        session.clear
+        redirect_to "/home"
+
     end
 
 

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         u.email = auth[:info][:email]
         u.password = SecureRandom.hex
       end
-  
+
       if @user.valid?
         session[:user_id] = @user.id
         redirect_to user_path(@user)
@@ -19,12 +19,12 @@ class SessionsController < ApplicationController
     end
 
     def create
-     
+
       redirect_to '/show'
     end
-    
 
-    
+
+
     private
 
     def auth
