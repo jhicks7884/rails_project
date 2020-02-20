@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
       @user = User.find_by(username: params[:user][:username])
 
-     if @user.try(:authenticate, params[:user][:password])
+      if @user.try(:authenticate, params[:user][:password])
 
 
        session[:user_id] = @user.id
